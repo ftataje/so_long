@@ -1,0 +1,53 @@
+COMANDOS:
+w: arriba
+a: izquierda
+s: abajo
+d: derecha
+ESC o Boton cerrar("x"): Debe cerrar la ventana y cerrar el programa limpiamente
+
+SIMBOLOGIA
+0: Espacio vacio
+1: Muro
+C: Coleccionable
+E: salida del mapa
+P: posicion inicial del jugador
+
+-Compilar las imagenes con miniLibX
+-Primer argv al ingresar debe ser el mapa con extension .ber
+-Mapa debe estar cerrado por muros (1)
+-Minimo una E, un C y una P
+-Mapa rectangular
+-Capacidad de procesar cualquier tipo de mapa
+-En caso de un fallo debe devolver "Error\n" seguido de un mensaje explicito de eleccion
+-El # movimientos totales debe mostrarse en una terminal
+-El jugador no puede estar dentro de un muro
+
+
+./so_long maps/map.ber
+
+
+
+Dudas:
+split_map: porque cuenta caracteres en base al control->name pero lee en base al control->fd
+
+
+Lee la documentación del proyecto: Antes de comenzar el proyecto, es importante que leas la documentación proporcionada por 42. Esto te dará una buena comprensión de lo que se espera que hagas y te ayudará a planificar tu enfoque para el proyecto.
+
+Instala minilibx: La biblioteca gráfica minilibx es necesaria para crear el juego. Asegúrate de que está instalada en tu sistema y que puedes compilar y ejecutar el código de ejemplo proporcionado con ella.
+
+Diseña el juego: Antes de comenzar a escribir código, es útil diseñar el juego. Decide qué tipo de juego quieres hacer, cómo será el mundo del juego, qué personajes o elementos habrá y cómo interactuarán.
+
+Implementa el mapa: El primer paso es crear un mapa para el juego. Puedes crear tu propio mapa o utilizar uno proporcionado por el proyecto. Asegúrate de que tu código pueda leer y renderizar el mapa.
+
+Implementa el jugador: Después de tener el mapa, implementa al jugador. Asegúrate de que el jugador pueda moverse en el mapa y que haya alguna interacción básica con el mundo del juego.
+
+Agrega elementos al juego: Una vez que tengas al jugador funcionando correctamente, puedes agregar más elementos al juego, como enemigos, objetos o power-ups.
+
+Agrega una condición de victoria: Finalmente, agrega una condición de victoria al juego. Esto puede ser tan simple como llegar a un punto específico en el mapa o derrotar a un jefe final.
+
+
+
+
+
+
+

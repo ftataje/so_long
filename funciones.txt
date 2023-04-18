@@ -1,0 +1,27 @@
+•x isalpha - retorna 1 si es un caracter alfabetico
+•x isdigit - retorna 1 si es un caracter numerico '8'
+•x isalnum - retorna 1 si es un caracter alfanumerico
+•x isascii - retorna 1 si es un caracter ascii de control e imprimible
+•x isprint - retorna 1 si es un caracter ascii imprimible
+•x strlen - retorna el # de caracteres de un string
+•z memset - reemplaza los caracteres del string por el indicado como 'c', en # de caracteres indicado en 'len'. Retorna un nuevo string.
+•z bzero - reemplaza los caracteres del string por caracteres NULL en n caracteres
+•x memcpy - reemplaza caracter x caracter del string Destino con los caracteres del source en n caracteres. Retorna el string destino modificado.
+•x memmove - los mismo que el memcpy solo que el memcpy no funciona si el Dest y Src tomam el mismo string y el dest esta despues del src
+•x strlcpy - Sobreescribe el String2 en el String1 en 'n' caracteres. Retorna el largo del String2.
+•x strlcat - Si n <= len(DEST) ==> Los strings se mantienen y retorna el numero de caracteres del SRC + n || Si n > len(DEST) la funcion original da ERROR, y la funcion creada concatena los strings hasta tener los n-1 caracteres, retorna el len(DEST + SRC)
+•x toupper - convierte UNA letra de minuscula a mayuscula
+•x tolower - convierte UNA letra de mayuscula a minuscula
+•x strchr - Retorna el string desde el Primer caracter que coincide con el caracter indicado
+•x strrchr - Retorna el string desde el Ultimo caracter que coincide con el caracter indicado
+•x strncmp - Retorna la diferencia (segun el valor de la tabla ascii) entre el primer caracter diferente de 2 strings
+•x memchr - Busca el primer caracter indicado como int dentro del rango de caracteres indicado en el size_t del string y lo devuelde de ahi en adelante, si no encuentra el caracter da NULL
+•x memcmp - Da la diferencia de caracteres entre 2 strings dentro del rango de caracteres indicado en size_t
+•x strnstr - Busca el string2 en el string1 dentro del rango de caracteres indicado como size_t y retorna el string1 desde que coinciden en adelante, si no lo encuentra retorna NULL.
+•x atoi - Retorna el signo y numeros encontrados antes de que aparezca una letra, si hay 2 signos da NULL, si no hay numeros antes de las letras da NULL
+
+• calloc - el malloc separa el espacio indicado, el calloc separa el espacio multiplicando el numero de variables a ingresar * tamaño de la variable y tambien llena los espacios separados con 0
+• strdup - Retorna el string en una VARIABLE NUEVA.
+
+
+rm -r ~/Library/Caches/*; rm ~/.zcompdump

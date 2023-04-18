@@ -1,0 +1,30 @@
+
+·ft_substr - En una NUEVA VARIABLE se imprime en "len" caracteres desde "start" en la string indicada
+·ft_strjoin - En una NUEVA VARIABLE se concatena los strings
+·ft_strtrim - Elimina los caracteres del string2 en el String1 si y solo si se encuentran a los lados del string1
+·ft_split - Divide el string en (n+1)strings dependiendo de cuantas veces(n) se encuentra el caracter indicado y los retorna
+·ft_itoa - convirte cada dígito de un entero en caracteres
+·ft_strmapi - Aplica a cada caracter del string la funcion indicada para un caracter. Ejm pasar a mayuscula/minuscula
+·ft_striteri - Aplica al string la funcion indicada para un string
+ft_putchar_fd - Imprime una letra en el archivo indicado (puede ser en un txt)
+ft_putstr_fd - Imprime un string en el archivo indicado (puede ser en un txt)
+ft_putendl_fd - Imprime un string y un salto de linea en el archivo indicado (puede ser en un txt)
+ft_putnbr_fd - Imprime un numero entero positivo o negativo en el archivo indicado (puede ser en un txt)
+
+bonus
+ft_lstnew - Agrega un string a una lista
+ft_lstadd_front - Agrega un nodo adelante de toda una lista
+ft_lstsize -  Cuenta el numero de nodos
+ft_lstlast - Toma el ultimo nodo
+ft_lstadd_back - Agrega un nodo al final de toda una lista
+ft_lstdelone - Elimina solo el nodo indicado de la lista
+ft_lstclear - Eliminar todos los nodos de una lista
+ft_lstiter - Itera la lista y a cada nodo se le aplica la funcion indicada
+ft_lstmap - Itera la lista y a cada nodo se le aplica la funcion indicada y se puede borrar la lista si se desea
+
+rm -r ~/Library/Caches/*; rm ~/.zcompdump
+df -h
+
+make
+gcc ft_substr.c libft.a
+./a.out
