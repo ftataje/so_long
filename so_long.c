@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:44:00 by ftataje-          #+#    #+#             */
-/*   Updated: 2022/09/30 13:44:02 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:24:39 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,25 @@ static void	*ft_memset(void *str, int c, size_t len)
 	return (newstr);
 }
 
-void	map_step(t_game *game, char *)
+void	map_step(t_total *game, char *arg)
 {
+	rev_ber(&game->parameter);
+	rev_open(&game->parameter, arg);
+	rev_rectangular(&game->parameter);
+	rev_chars(&game->parameter);
+
+	/*revisa que sea .ber
+	Abre y revisa si el archivo abre
+	Revision errores*/
 
 }
 
 int	main(int argc, char **argv)
 {
-	t_game	game;
+	t_total	game;
 
-	if(argc != 2)
+	if (argc != 2)
 		perror("Error en cantidad de argumentos");
-	ft_memset(&game, 0, sizeof(t_game));
+	ft_memset(&game, 0, sizeof(t_total));
 	map_step(&game, argv[1]);
-
-
-	
-	
-
-	
-
-
-	
-
 }
