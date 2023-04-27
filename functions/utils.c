@@ -6,16 +6,21 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:59:31 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/26 17:09:38 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:36:18 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
 
-void	perror(char *str)
+void	printerrors(char *str)
 {
-	printf("%s\n", str);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 	exit (1);
 }
-
-

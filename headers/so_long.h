@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:22:32 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/26 17:25:08 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:09:24 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <errno.h>
 # include <string.h>
-# include "get_next_line.h"
+# include "../gnl/get_next_line.h"
 # include "../miniLIBX/mlx.h"
 
 typedef struct s_parameter
@@ -30,22 +30,22 @@ typedef struct s_parameter
 	char	*name;
 }	t_parameter;
 
-
 typedef struct s_total
 {
 	t_parameter	parameter;
 
 }	t_total;
 
-void	perror(char *str);
-void	rev_ber(t_parameter *parameter);
+void	printerrors(char *str);
+void	rev_ber(t_parameter *parameter, char *arg);
 void	rev_open(t_parameter *parameter, char *arg);
 void	rev_rectangular(t_parameter *parameter);
 void	rev_chars(t_parameter *parameter);
 
+/*
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
 void	ft_putstr(char *str);
-void	*ft_memset(void *str, int c, size_t len);
+*/
 
 #endif

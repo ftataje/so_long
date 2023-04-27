@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:49:44 by ftataje-          #+#    #+#             */
-/*   Updated: 2022/05/24 13:12:37 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:22:54 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);

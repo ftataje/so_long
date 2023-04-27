@@ -6,32 +6,34 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:03:57 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/26 17:27:06 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:15:38 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
 
-void	rev_ber(t_parameter *parameter)
+void	rev_ber(t_parameter *parameter, char *str)
 {
 	int	i;
 
 	i = 0;
+	parameter->name = str;
 	i = ft_strlen(parameter->name);
 	if (parameter->name[i - 1] != 'r' && parameter->name[i - 2] != 'e'
 		&& parameter->name[i - 3] != 'b' && parameter->name[i - 1] != '.')
 	{
-		perror("Error, el mapa no es '.ber'");
+		printerrors("Error, el mapa no es '.ber'");
 	}
 }
 
 void	rev_open(t_parameter *parameter, char *arg)
 {
-	parameter->fd = open(arg[1], O_RDONLY);
+	printf("fd: %d\n", parameter->fd);
+	parameter->fd = open(&arg[1], O_RDONLY);
 	if (parameter->fd < 0 || parameter->fd > 2)
 	{
 		close(parameter->fd);
-		perror("Error, al abrir el argumento indicado");
+		printerrors("Error, al abrir el argumento indicado");
 	}
 }
 
@@ -71,11 +73,11 @@ void	rev_rectangular(t_parameter *parameter)
 			if (map_width(rmap) == map_width(parameter->map[i]))
 				tmp[i] = parameter->map[i];
 			else
-				perror("Error, mapa no es rectangular");
+				printerrors("Error, mapa no es rectangular");
 		}
 	}
 	close (parameter->fd);
 	parameter->width = map_width(parameter->map[0]);
 	if (parameter->height == parameter->width)
-		perror("Error, es un cuadrado");
+		printerrors("Error, es un cuadrado");
 }

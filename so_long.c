@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:44:00 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/26 17:24:39 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:13:35 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	*ft_memset(void *str, int c, size_t len)
 
 void	map_step(t_total *game, char *arg)
 {
-	rev_ber(&game->parameter);
+	rev_ber(&game->parameter, arg);
 	rev_open(&game->parameter, arg);
 	rev_rectangular(&game->parameter);
 	rev_chars(&game->parameter);
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	t_total	game;
 
 	if (argc != 2)
-		perror("Error en cantidad de argumentos");
-	ft_memset(&game, 0, sizeof(t_total));
+		printerrors("Error en cantidad de argumentos");
+	ft_memset(&game, 0, sizeof(game));
 	map_step(&game, argv[1]);
 }
