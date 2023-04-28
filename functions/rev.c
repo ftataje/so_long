@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:03:57 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/27 17:15:38 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:25:28 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ static int	map_width(char *str)
 	return (i);
 }
 
-static int	add_line(t_parameter *parameter, char *line)
+static int	check_widths(t_parameter *parameter, char *str)
 {
 	char	**tmp;
 	int		i;
 	
-	if (!line)
+	if (!str)
 		return (0);
 	i = -1;
 	parameter->height++;
@@ -65,13 +65,16 @@ static int	add_line(t_parameter *parameter, char *line)
 	tmp[parameter->height] = NULL;
 	while (++i < parameter->height -1)
 	{
-		if(map_width(line) == map_width(parameter->map[i]))
+		if(map_width(str) == map_width(parameter->map[i]))
 			tmp[i] = parameter->map[i];
 		else
 			printerrors("Error, mapa no es rectangular");
 	}
-	
-	
+	tmp[i] = str;
+	if (parameter->map)
+		free(parameter->map);
+	parameter->map = tmp;
+	return (1);
 }
 
 void	rev_rectangular(t_parameter *parameter)
@@ -82,33 +85,10 @@ void	rev_rectangular(t_parameter *parameter)
 
 	while (1)
 	{
-		printf("d: %d\n", parameter->fd);
 		rmap = get_next_line(parameter->fd);
-		printf("rmap: %s\n", rmap);
-		if (!add_line(parameter, rmap))
+		if (!check_widths(parameter, rmap))
 			break ;
-		/*
-		if (!rmap)
-			break ;
-		i = -1;
-		printf("h: %d\n", parameter->height);
-		parameter->height++;
-		printf("h: %d\n", parameter->height);
-		parameter->map[0] = "hola";
-		printf("map: %s\n", parameter->map[0]);
-		tmp = (char **)malloc(sizeof(char *) * (parameter->height+1));
-		tmp[parameter->height] = 0;
-		while (i++ < parameter->height - 1)
-		{
-			printf("entro\n");
-			printf("map: %s\n", parameter->map[0]);
-			if (map_width(rmap) == map_width(parameter->map[i]))
-				tmp[i] = parameter->map[i];
-			else
-				printerrors("Error, mapa no es rectangular");
-		}*/
 	}
-	close (parameter->fd);
 	parameter->width = map_width(parameter->map[0]);
 	if (parameter->height == parameter->width)
 		printerrors("Error, es un cuadrado");
