@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:03:57 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/28 15:25:28 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:04:46 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	rev_ber(t_parameter *parameter, char *str)
 void	rev_open(t_parameter *parameter, char *arg)
 {
 	parameter->fd = open(arg, O_RDONLY);
-	if (parameter->fd < 0 ) // || parameter->fd > 2)
+	if (parameter->fd < 0 )
 	{
 		close(parameter->fd);
 		printerrors("Error, al abrir el argumento indicado");
@@ -56,16 +56,16 @@ static int	check_widths(t_parameter *parameter, char *str)
 {
 	char	**tmp;
 	int		i;
-	
+
 	if (!str)
 		return (0);
 	i = -1;
 	parameter->height++;
-	tmp = (char **)malloc(sizeof(char *) *(parameter->height+1));
+	tmp = (char **)malloc(sizeof(char *) *(parameter->height +1));
 	tmp[parameter->height] = NULL;
 	while (++i < parameter->height -1)
 	{
-		if(map_width(str) == map_width(parameter->map[i]))
+		if (map_width(str) == map_width(parameter->map[i]))
 			tmp[i] = parameter->map[i];
 		else
 			printerrors("Error, mapa no es rectangular");
@@ -80,8 +80,6 @@ static int	check_widths(t_parameter *parameter, char *str)
 void	rev_rectangular(t_parameter *parameter)
 {
 	char	*rmap;
-	//int		i;
-	//char	**tmp;
 
 	while (1)
 	{

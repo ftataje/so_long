@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:22:32 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/28 16:05:27 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:50:10 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_parameter
 typedef struct s_total
 {
 	t_parameter	parameter;
-	
 }	t_total;
 
 void	printerrors(char *str);
@@ -45,6 +44,9 @@ void	rev_open(t_parameter *parameter, char *arg);
 void	rev_rectangular(t_parameter *parameter);
 void	rev_chars(t_parameter *parameter);
 
+int		search_x(t_parameter *parameter, char c);
+
+char	*ft_strdup(char *src);
 /*
 void	ft_putchar(char c);
 void	ft_putnbr(int n);

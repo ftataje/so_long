@@ -28,3 +28,6 @@ df -h
 make
 gcc ft_substr.c libft.a
 ./a.out
+
+
+

@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:26:43 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/04/28 16:44:08 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:49:58 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ void	check_validchar(t_parameter *parameter)
 
 void	check_way(t_parameter *parameter)
 {
+	int	x;
 
+	x = search_x(parameter, 'P');
+	printf("a: %d\n", x);
 }
 
 void	rev_chars(t_parameter *parameter)
