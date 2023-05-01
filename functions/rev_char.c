@@ -87,12 +87,40 @@ void	check_validchar(t_parameter *parameter)
 	}
 }
 
+void	fill_way(char **map, int x, int y)
+{
+	if (map[x][y] == '0' || map[x][y] == 'C' || map[x][y] == 'P' || map[x][y] == 'E')
+	{
+		map[x][y] = 'A';
+		fill_way(map, x + 1, y);
+		fill_way(map, x - 1, y);
+		fill_way(map, x, y + 1);
+		fill_way(map, x, y - 1);
+	}
+}
+
 void	check_way(t_parameter *parameter)
 {
-	int	x;
+	char **m2;
+	int	i;
+	int j;
 
-	x = search_x(parameter, 'P');
-	printf("a: %d\n", x);
+	i = 0;
+	j = 0;
+	m2 = parameter->map;
+	fill_way(m2, search_x(parameter, 'P'), search_y(parameter, 'P'));
+
+	while (i < parameter->height)
+	{
+		j = 0;
+		while (j < parameter->width)
+		{
+			if (m2[i][j] == 'E' || m2[i][j] == 'C')
+				printerrors("Error, no hay camino a la salida");
+			j++;
+		}
+		i++;
+	}
 }
 
 void	rev_chars(t_parameter *parameter)
@@ -102,3 +130,6 @@ void	rev_chars(t_parameter *parameter)
 	check_validchar(parameter);
 	check_way(parameter);
 }
+
+
+

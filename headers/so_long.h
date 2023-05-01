@@ -45,8 +45,9 @@ void	rev_rectangular(t_parameter *parameter);
 void	rev_chars(t_parameter *parameter);
 
 int		search_x(t_parameter *parameter, char c);
+int		search_y(t_parameter *parameter, char c);
+void	fill_way(char **map, int x, int y);
 
-char	*ft_strdup(char *src);
 /*
 void	ft_putchar(char c);
 void	ft_putnbr(int n);

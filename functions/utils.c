@@ -25,23 +25,6 @@ void	printerrors(char *str)
 	exit (1);
 }
 
-char	*ft_strdup(char *src)
-{
-	char	*new;
-	int		i;
-
-	i = 0;
-	new = (char *)malloc(ft_strlen(src) + 1);
-	if (!new)
-		return (NULL);
-	while (*src)
-	{
-		new[i++] = *src++;
-	}
-	new[i] = '\0';
-	return (new);
-}
-
 int	search_x(t_parameter *parameter, char c)
 {
 	int	i;
@@ -61,5 +44,27 @@ int	search_x(t_parameter *parameter, char c)
 		i++;
 	}
 	printerrors("Error, no se encontro el char en el eje X");
+	return (-1);
+}
+
+int	search_y(t_parameter *parameter, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < parameter->height)
+	{
+		j = 0;
+		while (j < parameter->width)
+		{
+			if (parameter->map[i][j] == c)
+				return (i);
+			j++;
+		}
+		i++;
+	}
+	printerrors("Error, no se encontro el char en el eje Y");
 	return (-1);
 }
