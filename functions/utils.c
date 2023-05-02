@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:59:31 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/01 19:50:00 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:49:34 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,45 @@ int	search_y(t_parameter *parameter, char c)
 	}
 	printerrors("Error, no se encontro el char en el eje Y");
 	return (-1);
+}
+
+void	fill_way(char **map, int x, int y)
+{
+	if (map[x][y] == '0' || map[x][y] == 'C' ||
+		map[x][y] == 'P' || map[x][y] == 'E')
+	{
+		map[x][y] = 'A';
+		fill_way(map, x + 1, y);
+		fill_way(map, x - 1, y);
+		fill_way(map, x, y + 1);
+		fill_way(map, x, y - 1);
+	}
+}
+
+char	**ft_strdup(t_parameter *parameter)
+{
+	char	**new;
+	int		i;
+	int		j;
+
+	new = (char **)malloc(sizeof(char **) * (parameter->height + 1));
+	if (!new)
+		return (NULL);
+	j = 0;
+	while (j < parameter->height)
+	{
+		new[j] = (char *)malloc(sizeof(char) * (parameter->width + 1));
+		if (!new[j])
+			return (NULL);
+		i = 0;
+		while (i < parameter->width)
+		{
+			new[j][i] = parameter->map[j][i];
+			i++;
+		}
+		new[j][i] = '\0';
+		j++;
+	}
+	new[j] = NULL;
+	return (new);
 }

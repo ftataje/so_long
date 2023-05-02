@@ -6,7 +6,7 @@ CFLAGS := -Wall -Wextra -Werror -Iheaders/
 
 SOURCE := so_long.c functions/*.c
 GNL := gnl/*.c
-LIBRARY := -framework OpenGL -framework AppKit
+LIBRARY := -Lminilibx -lmlx -framework OpenGL -framework AppKit
 MNLBX := miniLIBX/
 
 all: 

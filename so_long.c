@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:44:00 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/01 19:50:01 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/02 19:42:59 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,12 @@ int	main(int argc, char **argv)
 		printerrors("Error en cantidad de argumentos");
 	ft_memset(&game, 0, sizeof(game));
 	map_step(&game, argv[1]);
+	game.mlxtot.mlxptr = mlx_init();
+	game.mlxtot.wingame = mlx_new_window(game.mlxtot.mlxptr,
+			(game.parameter.width * 50),
+			(game.parameter.height * 50), "so_long");
+	charge_images(&game);
+	charge_in_map(&game);
+	mlx_key_hook(game.mlxtot.wingame, func_ord, &game);
+	mlx_loop(game.mlxtot.mlxptr);
 }

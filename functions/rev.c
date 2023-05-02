@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:03:57 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/01 19:04:46 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:56:56 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	rev_ber(t_parameter *parameter, char *str)
 void	rev_open(t_parameter *parameter, char *arg)
 {
 	parameter->fd = open(arg, O_RDONLY);
-	if (parameter->fd < 0 )
+	if (parameter->fd < 0)
 	{
 		close(parameter->fd);
 		printerrors("Error, al abrir el argumento indicado");
@@ -45,7 +45,7 @@ static int	map_width(char *str)
 	{
 		i++;
 	}
-	if (str[i-1] == '\n')
+	if (str[i -1] == '\n')
 	{
 		i--;
 	}

@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:26:43 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/01 19:49:58 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:53:55 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,29 +87,16 @@ void	check_validchar(t_parameter *parameter)
 	}
 }
 
-void	fill_way(char **map, int x, int y)
-{
-	if (map[x][y] == '0' || map[x][y] == 'C' || map[x][y] == 'P' || map[x][y] == 'E')
-	{
-		map[x][y] = 'A';
-		fill_way(map, x + 1, y);
-		fill_way(map, x - 1, y);
-		fill_way(map, x, y + 1);
-		fill_way(map, x, y - 1);
-	}
-}
-
 void	check_way(t_parameter *parameter)
 {
-	char **m2;
-	int	i;
-	int j;
+	char	**m2;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	m2 = parameter->map;
+	m2 = ft_strdup(parameter);
 	fill_way(m2, search_x(parameter, 'P'), search_y(parameter, 'P'));
-
 	while (i < parameter->height)
 	{
 		j = 0;
@@ -130,6 +117,3 @@ void	rev_chars(t_parameter *parameter)
 	check_validchar(parameter);
 	check_way(parameter);
 }
-
-
-
