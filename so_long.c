@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:44:00 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/02 19:42:59 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:00:49 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ int	main(int argc, char **argv)
 	charge_images(&game);
 	charge_in_map(&game);
 	mlx_key_hook(game.mlxtot.wingame, func_ord, &game);
+	mlx_hook(game.mlxtot.wingame, 17, 0, (void *)exit, 0);
 	mlx_loop(game.mlxtot.mlxptr);
 }
