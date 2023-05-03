@@ -6,15 +6,15 @@
 #    By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 16:10:51 by ftataje-          #+#    #+#              #
-#    Updated: 2023/05/03 16:43:47 by ftataje-         ###   ########.fr        #
+#    Updated: 2023/05/03 17:32:41 by ftataje-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := so_long
+NAME = so_long
 
-CC := gcc
+CC = gcc
 
-CFLAGS := -Wall -Wextra -Werror -Iheaders/
+CFLAGS = -Wall -Wextra -Werror -g3
 
 OBJS = $(SOURCE:.c=.o)
 
@@ -28,8 +28,7 @@ SOURCE = so_long.c	\
 		gnl/get_next_line_utils.c \
 		gnl/get_next_line.c \
 			
-GNL := gnl/*.c
-LIBRARY := -Lminilibx -lmlx -framework OpenGL -framework AppKit
+LIBRARY := -framework OpenGL -framework AppKit
 MNLBX := miniLIBX/
 
 RED=\033[0;31m
@@ -41,12 +40,13 @@ END=\033[0m
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	make -C $(MNLBX)
-	$(CC) $(CFLAGS) $(SOURCE) $(GNL) $(LIBRARY) -o $(NAME)
+	make -C $(MNLBX) 2> warnigs_total
+	mv ./miniLIBX/libmlx.a .
+	$(CC) $(CFLAGS) $(OBJS) -L . -lmlx $(LIBRARY) -o $(NAME)
 
 clean:
 	make -C $(MNLBX) clean
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) warnigs_total libmlx.a
 	echo "$(RED)☯ Obj deleted ☯$(END)"
 
 
