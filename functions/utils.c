@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:59:31 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/03 17:50:39 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/08 20:45:56 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,20 @@ int	search_y(t_parameter *parameter, char c)
 
 void	fill_way(char **map, int x, int y)
 {
-	if (map[x][y] == '0' || map[x][y] == 'C' ||
-		map[x][y] == 'P' || map[x][y] == 'E')
+	if (map[y][x] == '0' || map[y][x] == 'C' ||
+		map[y][x] == 'P')
 	{
-		map[x][y] = 'A';
+		map[y][x] = 'A';
 		fill_way(map, x + 1, y);
 		fill_way(map, x - 1, y);
 		fill_way(map, x, y + 1);
 		fill_way(map, x, y - 1);
 	}
+	if (map[y][x] == 'E')
+	{
+		map[y][x] = 'Z';
+	}
+	
 }
 
 char	**ft_strdup(t_parameter *parameter)

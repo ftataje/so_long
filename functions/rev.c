@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:03:57 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/08 14:30:26 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/08 20:35:37 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,4 @@ void	rev_rectangular(t_parameter *parameter)
 	if (!parameter->map || parameter->map == NULL)
 		printerrors("Error, mapa vacío");
 	parameter->width = map_width(parameter->map[0]);
-	if (parameter->height == parameter->width)
-		printerrors("Error, es un cuadrado");
 }

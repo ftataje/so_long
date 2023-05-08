@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:26:43 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:53:55 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/08 20:47:22 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,16 +97,16 @@ void	check_way(t_parameter *parameter)
 	j = 0;
 	m2 = ft_strdup(parameter);
 	fill_way(m2, search_x(parameter, 'P'), search_y(parameter, 'P'));
-	while (i < parameter->height)
+	while (j < parameter->height)
 	{
-		j = 0;
-		while (j < parameter->width)
+		i = 0;
+		while (i < parameter->width)
 		{
-			if (m2[i][j] == 'E' || m2[i][j] == 'C')
+			if (m2[j][i] == 'E' || m2[j][i] == 'C')
 				printerrors("Error, no hay camino a la salida");
-			j++;
+			i++;
 		}
-		i++;
+		j++;
 	}
 }
 
