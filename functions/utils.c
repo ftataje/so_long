@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:59:31 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:49:34 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:50:39 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ void	printerrors(char *str)
 	int	i;
 
 	i = 0;
+	write(1, "\033[31m", 5);
 	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
+	write(1, "\033[0m", 4);
 	exit (1);
 }
 
