@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:59:31 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/08 20:45:56 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:50:57 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	fill_way(char **map, int x, int y)
 	{
 		map[y][x] = 'Z';
 	}
-	
 }
 
 char	**ft_strdup(t_parameter *parameter)
