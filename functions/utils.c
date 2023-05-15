@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:59:31 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/12 13:50:57 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/15 21:24:32 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ char	**ft_strdup(t_parameter *parameter)
 		j++;
 	}
 	new[j] = NULL;
+	free(new);
 	return (new);
 }

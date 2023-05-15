@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:09:50 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/03 16:05:07 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/15 21:39:51 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ int	func_ord(int key, t_total *game)
 	z = 0;
 	x = 0;
 	y = 0;
+	//system("leaks so_long");
+
 	if (key == 13)
 		z = key_up_down(game, key, x, y);
 	if (key == 2)
