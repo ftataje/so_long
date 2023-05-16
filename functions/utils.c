@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: misterion9 <misterion9@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:59:31 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/15 21:24:32 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/17 00:05:47 by misterion9       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	fill_way(char **map, int x, int y)
 	{
 		map[y][x] = 'Z';
 	}
+	
 }
 
 char	**ft_strdup(t_parameter *parameter)
@@ -102,7 +103,16 @@ char	**ft_strdup(t_parameter *parameter)
 	{
 		new[j] = (char *)malloc(sizeof(char) * (parameter->width + 1));
 		if (!new[j])
+		{
+			// Si ocurre un error, liberamos la memoria asignada anteriormente
+			while (j > 0)
+			{
+				j--;
+				free(new[j]);
+			}
+			free(new);
 			return (NULL);
+		}
 		i = 0;
 		while (i < parameter->width)
 		{
@@ -113,6 +123,5 @@ char	**ft_strdup(t_parameter *parameter)
 		j++;
 	}
 	new[j] = NULL;
-	free(new);
 	return (new);
 }

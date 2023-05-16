@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_char.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: misterion9 <misterion9@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:26:43 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/08 20:47:22 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/17 00:49:26 by misterion9       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,11 @@ void	check_way(t_parameter *parameter)
 	char	**m2;
 	int		i;
 	int		j;
+	int 	k;
 
 	i = 0;
 	j = 0;
+	k = 0;
 	m2 = ft_strdup(parameter);
 	fill_way(m2, search_x(parameter, 'P'), search_y(parameter, 'P'));
 	while (j < parameter->height)
@@ -108,6 +110,11 @@ void	check_way(t_parameter *parameter)
 		}
 		j++;
 	}
+    while (m2[k] != NULL) {
+        free(m2[k]);
+        k++;
+    }
+    free(m2);
 }
 
 void	rev_chars(t_parameter *parameter)
