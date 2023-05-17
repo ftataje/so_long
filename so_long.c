@@ -6,7 +6,7 @@
 /*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:44:00 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/15 21:40:58 by ftataje-         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:18:17 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ int	main(int argc, char **argv)
 	mlx_key_hook(game.mlxtot.wingame, func_ord, &game);
 	mlx_hook(game.mlxtot.wingame, 17, 0, (void *)exit, 0);
 	mlx_loop(game.mlxtot.mlxptr);
+	finishgame(&game);
 }

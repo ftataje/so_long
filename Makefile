@@ -6,7 +6,7 @@
 #    By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 16:10:51 by ftataje-          #+#    #+#              #
-#    Updated: 2023/05/08 18:58:22 by ftataje-         ###   ########.fr        #
+#    Updated: 2023/05/17 14:09:40 by ftataje-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = so_long
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -g3 
 
 OBJS = $(SOURCE:.c=.o)
 

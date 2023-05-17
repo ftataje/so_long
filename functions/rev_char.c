@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_char.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misterion9 <misterion9@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ftataje- <ftataje-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:26:43 by ftataje-          #+#    #+#             */
-/*   Updated: 2023/05/17 00:49:26 by misterion9       ###   ########.fr       */
+/*   Updated: 2023/05/17 16:15:32 by ftataje-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	check_way(t_parameter *parameter)
 	char	**m2;
 	int		i;
 	int		j;
-	int 	k;
+	int		k;
 
 	i = 0;
 	j = 0;
@@ -110,11 +110,9 @@ void	check_way(t_parameter *parameter)
 		}
 		j++;
 	}
-    while (m2[k] != NULL) {
-        free(m2[k]);
-        k++;
-    }
-    free(m2);
+	while (m2[k] != NULL)
+		free(m2[k++]);
+	free(m2);
 }
 
 void	rev_chars(t_parameter *parameter)
